@@ -3,6 +3,7 @@ const express = require("express");
 // importar la función
 const { connectDB } = require("./src/config/db");
 const moviesRouter = require("./src/api/routes/movie");
+const cinemasRouter = require("./src/api/routes/cinema")
 
 const app = express();
 
@@ -15,6 +16,9 @@ app.use(express.json());
 
 //Creamos una app para nuestras rutas de Movies
 app.use("/api/v1/movies", moviesRouter);
+
+//creamos una app para nuestras rutas de Cinemas
+app.use("/api/v1/cinemas", cinemasRouter);
 
 
 
